@@ -1,32 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-fetch("/prices/"+ticker)
-.then((response) => response.json())
-.then((result) => {
-  console.log(result)
-  var trace1 = {
-    x: [1, 2, 3, 4],
-    y: result['prices'],
-    mode: 'markers',
-    type: 'scatter'
-  };
+  fetch("/prices/" + ticker)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result['prices'])
+      var xvals = [];
 
-  var data = [trace1];
+      for (var i = 1; i <= 37; i++) {
+        xvals.push(i);
+      }
+      var trace1 = {
+        x: xvals,
+        y: result['prices'],
+        mode: 'markers',
+        type: 'scatter'
+      };
 
-  var layout = {
-    title:'Past and Predicted Price',
+      var data = [trace1];
 
-     xaxis: {
-      title: 'Trading Day',
-    },
-    yaxis: {
-      title: 'Price',
-    },
+      var layout = {
+        title: 'Past and Predicted Price',
 
-    xaxis: {
-    range: [-30, 7]
-  },
-  };
+        xaxis: {
+          title: 'Trading Day',
+        },
+        yaxis: {
+          title: 'Price',
+        },
 
-  Plotly.newPlot('graph', data);
-});
+        xaxis: {
+          range: [-30, 7]
+        },
+      };
+
+      Plotly.newPlot('graph', data);
+    });
 });
