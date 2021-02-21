@@ -19,7 +19,7 @@
                     <nav>
                         <ul id="MenuItems">
                             <li>
-                                <a href="about.html">About</a>
+                                <a href="{% url 'about' %}">About</a>
                             </li>
                         </ul>
                         <img src="{% static 'img/menu.png' %}" class="menu-icon" onclick="menutoggle()" align="right">
@@ -34,7 +34,7 @@
                 <h1>Bringing you the hottest stocks</h1>
                 <p>
                     <br>
-                    <!-- <a href="about.html" class="btn">Learn more about us &#8594;</a> -->
+                    <!-- <a href="{% url 'about' %}" class="btn">Learn more about us &#8594;</a> -->
                 </p>
             </div>
         </div>
@@ -152,12 +152,12 @@
             </div>
             <div class="footitems">
                 <p>
-                    <a href="about.html">About</a>
+                    <a href="{% url 'about' %}">About</a>
                 </p>
             </div>
             <div class="footitems">
                 <p>
-                    <a href="about.html" target="_blank">Terms</a>
+                    <a href="{% url 'about' %}" target="_blank">Terms</a>
                 </p>
             </div>
             <div class="footitems">

@@ -13,3 +13,6 @@ def get_prices(request, ticker):
 
 def showStock(request, ticker):
     return render(request, "view.html", {'ticker': ticker})
+
+def about(request):
+    return render(request, "about.html")

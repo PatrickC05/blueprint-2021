@@ -7,17 +7,17 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="home.html">
-                        <img src="amsp.png" width="70px" class="nav-icon">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'img/AMSPupscale.png' %}" width="70px" class="nav-icon">
                     </a>
                 </div>
                 <nav>
                     <ul id="MenuItems">
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="{% url 'about' %}">About</a>
                         </li>
                     </ul>
-                    <img src="menu.png" class="menu-icon" onclick="menutoggle()" align="right">
+                    <img src="{% static 'img/menu.png' %}" class="menu-icon" onclick="menutoggle()" align="right">
                 </nav>
             </div>
         </div>
@@ -32,61 +32,25 @@
     <!-- text -->
     <div class="abouttxt">
         <h2>Our Mission</h2>
-        <p class="fontabouttxt">Our mission is to make investing accessible to everyone. The way we do this is by creting  </p>
+        <p class="fontabouttxt">Our mission is to make stock trading accessible to everyone. The way in which we did this is by creating a machine learning model that can predict the stock price for 1,000+ stocks, all at the click of a button. In doing so, we take the power out of the professionals on Wall Street, and put it in your hands, by allowing you to see the forecast of a stock, and decide whether or not your investment will pan out well. </p>
     </div>
 
     <div class="abouttxt">
-        <h2>The Impact of Food Waste</h2>
-        <p class="fontabouttxt">According to the article,
-            <a href="https://stopwastingfoodmovement.org/food-waste/food-waste-facts/" class="inlinebtn" target="_blank">
-                <i>Food Waste Facts</i>
-            </a>, by Stop Wasting Food, as of 2020, 925 million people worldwide are starving. However, ⅓ of all food produced
-            each year is wasted. This totals to be about 1.3 billion tons of food, which could feed 3 billion people. Thus,
-            if we were to not waste roughly 31% of the food that we waste each year, then we could feed 925 million people.
-            Additionally, food waste produces 4.4 gigatons of greenhouse gasses per year, being the 3 largest source of greenhouse
-            gasses. Furthermore, as stated in the article,
-            <a href="https://olioex.com/food-waste/food-waste-facts/" class="inlinebtn" target="_blank">
-                <i>10 Food Waste Facts</i>
-            </a>, by Olio, “25% of the world’s fresh water supply is used to grow food that is never eaten”. Seeing how large
-            of an impact food waste has and how rarely it is discussed, it is important that we look to spread food waste
-            awareness and reduce the amount of food that is wasted around the world!
+        <h2>How it Works</h2>
+        <p class="fontabouttxt">All you have to do is enter the ticker symbol for the stock you are interested in looking at, into the search bar on our front page. Once you do that, you will be taken to a page that displays a time-series graph with the price of the stock you are interested in over the past 30 days and the next 7 days, based on our models predictions.
+
         </p>
     </div>
 
     <div class="abouttxt">
-        <h2>Reducing Food Waste</h2>
-        <p class="fontabouttxt">With food waste being such a large issue, there are multiple ways that we can reduce the amount of food that we waste.
-            One way is by trying to solve the problem at its core, and only taking as much food as you need. Whether this
-            be at the dinner table or while shopping for food, making sure that you only take as much food as you need will
-            ensure that you will have a minimal amount of food waste. Additionally, saving leftovers is a very effective
-            way to reduce the amount of food that we waste. Instead of throwing away food after a meal, saving leftovers
-            in tupperware and storing them in the fridge is a great way to reduce your food waste and potentially the amount
-            of cooking that you need to do! Another way by which we can strive to reduce food waste is by donating food.
-            Food rescue organizations like
-            <a href="https://412foodrescue.org/" class="inlinebtn" target="_blank">
-                412 Food Rescue
-            </a>,
-            <a href="https://www.cityharvest.org/" class="inlinebtn" target="_blank">
-                City Harvest
-            </a>, and
-            <a href="http://stem4free.org/" class="inlinebtn" target="_blank">
-                Stem4Free
-            </a>, all help in this effort, by making sure that leftover food is rescued as opposed to thrown away. Likewise,
-            composting can also be an amazing way to reduce food waste. As opposed to throwing away leftover food, composting
-            can enrich soil and prevent food from going to landfills, in turn, preventing greenhouse gas emissions. Although
-            these aren’t the only ways to reduce the amount of food that we waste, they are definitely useful strategies
-            that we can employ.
-            <br>
-            <br>If you have any more suggestions on ways that we can reduce the amount of food that we waste, please feel free
-            to
-            <a href="mailto:contact.256t@gmail.com" class="inlinebtn">contact us</a>!
-
+        <h2>Terms of Service</h2>
+        <p class="fontabouttxt">This model was made and run by students. Hence, we are not professional. As a result, all predictions should be taken with a grain of salt.
         </p>
     </div>
 
     <!-- to top button -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">
-        <img src="arrow.png">
+        <img src="{% static 'img/arrow.png' %}">
     </button>
 
     <script>
@@ -115,18 +79,18 @@
     <hr class="footline">
     <div class="foot">
         <div class="footitems">
-            <a href="home.html">
-                <img src="amsp.png" width="70px">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'img/AMSPupscale.png' %}" width="70px">
             </a>
         </div>
         <div class="footitems">
             <p>
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
             </p>
         </div>
         <div class="footitems">
             <p>
-                <a href="about.html" target="_blank">Terms</a>
+                <a href="{% url 'about' %}" target="_blank">Terms</a>
             </p>
         </div>
         <div class="footitems">

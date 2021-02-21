@@ -21,10 +21,10 @@
                 <nav>
                     <ul id="MenuItems">
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="{% url 'about' %}">About</a>
                         </li>
                     </ul>
-                    <img src="menu.png" class="menu-icon" onclick="menutoggle()" align="right">
+                    <img src="{% static 'img/menu.png' %}" class="menu-icon" onclick="menutoggle()" align="right">
                 </nav>
 
             </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="rightimg">
                 <h1>
-                    <b>1234</b></h1>
+                    <b id="current_price"></b></h1>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
         <div class="leftsidecolumn">
             <p class="fontheadtxt">Predicted Price</p>
             <p class="fontscoretxt">
-                <b>12341234</b></p>
+                <b id="predicted_price"></b></p>
         </div>
         <div class="rightsidecolumn">
             <p class="fontptxt">Our machine learning model predicts that this will be the following stock price in a time of 7 days.
@@ -69,7 +69,7 @@
     <!-- to top button -->
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">
-        <img src="arrow.png">
+        <img src="{% static 'img/arrow.png' %}">
     </button>
 
     <script>
@@ -104,12 +104,12 @@
         </div>
         <div class="footitems">
             <p>
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
             </p>
         </div>
         <div class="footitems">
             <p>
-                <a href="about.html" target="_blank">Terms</a>
+                <a href="{% url 'about' %}" target="_blank">Terms</a>
             </p>
         </div>
         <div class="footitems">
