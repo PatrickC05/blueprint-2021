@@ -3,6 +3,10 @@
 
 {% block title %}Home{% endblock %}
 
+{% block otherimports %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 
 
@@ -41,8 +45,8 @@
 
         <div class="searchBox">
 
-                <input class="searchInput"type="text" name="" placeholder="Search...">
-                <button class="searchButton" href="#">
+                <input class="searchInput" id="searchBox" type="text" name="" placeholder="Search...">
+                <button class="searchButton" onclick="search()">
                     <i class="icon">
                         <img src="{% static 'img/searchicon.svg' %}" alt="searchicon"/>
                     </i>
