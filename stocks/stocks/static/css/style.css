@@ -11,7 +11,7 @@ body{
 .navbar{
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     font-size: 14.5px;
 }
 nav{
@@ -26,7 +26,7 @@ nav ul{
 
 nav ul li{
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 a{
@@ -38,7 +38,7 @@ h1{
     color:#2670ff;
     font-size: 50px;
     line-height: 60px;
-    margin: 25px 0;
+    margin: 10px 0;
 }
 
 p{
@@ -49,8 +49,8 @@ p{
     max-width: 1300px;
     margin: auto;
     padding-top: 25px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .row{
@@ -116,7 +116,7 @@ p{
 
 
 .header .row{
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .categories{
@@ -270,14 +270,14 @@ ul{
 }
 
 .menu-icon{
-    width: 25px;
+    width: 50px;
     margin-left: 20px;
     display: none;
     margin-bottom: 14px;
 }
 
 .nav-icon{
-    height: 25px;
+    height: 100px;
     width: 100px;
 }
 
@@ -893,7 +893,7 @@ ul{
 
 .searchBox:hover > .searchButton {
   background: rgb(255, 255, 255);
-  color : #8899ad;
+  color : #2670ff;
 }
 
 .searchButton {

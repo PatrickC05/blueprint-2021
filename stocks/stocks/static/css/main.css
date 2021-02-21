@@ -11,7 +11,7 @@ body{
 .navbar{
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     font-size: 14.5px;
 }
 nav{
@@ -26,7 +26,7 @@ nav ul{
 
 nav ul li{
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 a{
@@ -48,7 +48,7 @@ p{
 .container{
     max-width: 1300px;
     margin: auto;
-    padding-top: 25px;
+    padding-top: 50px;
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -58,7 +58,7 @@ p{
     flex-wrap: wrap;
     align-items: center;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -83,6 +83,7 @@ p{
     font-size: 50px;
     line-height: 60px;
     margin: 25px 0;
+    align-items: center;
     /* text-shadow: 1.5px 1.5px 2px #000000; */
 }
 
@@ -116,7 +117,7 @@ p{
 
 
 .header .row{
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .categories{
@@ -270,15 +271,15 @@ ul{
 }
 
 .menu-icon{
-    width: 25px;
+    width: 50px;
     margin-left: 20px;
     display: none;
     margin-bottom: 14px;
 }
 
 .nav-icon{
-    height: 25px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
 }
 
 /* media querey for menu */
@@ -893,7 +894,7 @@ ul{
 
 .searchBox:hover > .searchButton {
   background: rgb(255, 255, 255);
-  color : #8899ad;
+  color : #2670ff;
 }
 
 .searchButton {
@@ -915,7 +916,7 @@ ul{
     outline:none;
     float:left;
     padding: 0;
-    color: rgb(95, 95, 95);
+    color: rgb(255, 255, 255);
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
