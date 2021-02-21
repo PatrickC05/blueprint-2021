@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
+
+{% block title %}{{ticker}}{% endblock %}
+
+{% block otherimports %}
+<script>const ticker="{{ticker}}"</script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="{% static 'js/ShowPrice.js' %}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="{% static 'img/amsp.png' %}" width="70px" class="nav-icon">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'img/AMSPupscale.png' %}" width="70px" class="nav-icon">
                     </a>
                 </div>
                 <nav>
@@ -28,15 +36,17 @@
         <div class="leftcolumn">
             <div class="leftimg">
                 <div class="leftimg2">
-                    <h1>AAPL</h1>
-                    <p>A Big Tech Company.</p>
+                    <h1>{{ticker}}</h1>
                 </div>
             </div>
             <div class="rightimg">
                 <h1>
-                    <b>12342314</b></h1>
+                    <b>1234</b></h1>
             </div>
         </div>
+    </div>
+
+    <div class='graph' id="graph">
     </div>
 
     <!-- rubric and text template -->
@@ -88,8 +98,8 @@
     <hr class="footline">
     <div class="foot">
         <div class="footitems">
-            <a href="index.html">
-                <img src="{% static 'img/amsp.png' %}" width="70px">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'img/AMSPupscale.png' %}" width="70px">
             </a>
         </div>
         <div class="footitems">
