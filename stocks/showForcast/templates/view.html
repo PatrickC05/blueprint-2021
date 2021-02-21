@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{% static 'img/amsp.png' %}" width="70px" class="nav-icon">
+                    </a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <img src="menu.png" class="menu-icon" onclick="menutoggle()" align="right">
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row1">
+        <div class="leftcolumn">
+            <div class="leftimg">
+                <div class="leftimg2">
+                    <h1>AAPL</h1>
+                    <p>A Big Tech Company.</p>
+                </div>
+            </div>
+            <div class="rightimg">
+                <h1>
+                    <b>12342314</b></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- rubric and text template -->
+
+    <div class="ratingcontainer">
+        <div class="leftsidecolumn">
+            <p class="fontheadtxt">Predicted Price</p>
+            <p class="fontscoretxt">
+                <b>12341234</b></p>
+        </div>
+        <div class="rightsidecolumn">
+            <p class="fontptxt">Our machine learning model predicts that this will be the following stock price in a time of 7 days.
+                <br>
+                <i>Note</i> We are not professionals and this price should not be taken as a certain.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- to top button -->
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <img src="arrow.png">
+    </button>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <!-- footer -->
+
+    <hr class="footline">
+    <div class="foot">
+        <div class="footitems">
+            <a href="index.html">
+                <img src="{% static 'img/amsp.png' %}" width="70px">
+            </a>
+        </div>
+        <div class="footitems">
+            <p>
+                <a href="about.html">About</a>
+            </p>
+        </div>
+        <div class="footitems">
+            <p>
+                <a href="about.html" target="_blank">Terms</a>
+            </p>
+        </div>
+        <div class="footitems">
+            <p>
+                <a href="mailto:abhakta22@andover.edu">Contact</a>
+            </p>
+        </div>
+        <div class="foot-a1">
+            <div class="footitems-a1">
+                <p>
+                    <a href="https://www.linkedin.com/in/arnav-bhakta-588a771a7" target="_blank">Created by AMSP Stocks</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- menu -->
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+{% endblock %}
