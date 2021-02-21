@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         xaxis: {
-          range: [-30, 7]
+          range: [-29, 7]
         },
       };
 
-      Plotly.newPlot('graph', data);
+      Plotly.newPlot('graph', data, layout);
     });
 });
