@@ -24,13 +24,14 @@ def getPrices(ticker):
         ticker, date-datetime.timedelta(days=50), date, progress=False)
     prices = list(l['Close'])[-30:]
     prices_array = np.array(prices)
-    prices_array = (prices_array-mean)/std
-    prices_array = prices_array[np.newaxis, ..., np.newaxis]
     prices_array = prices_array.astype('float32')
-    interpreter.set_tensor(
-        input_details[0]['index'], prices_array)
-
-    interpreter.invoke()
-
-    output_days = interpreter.get_tensor(output_details[0]['index'])
-    return output_days*std+mean
+    prices_array = (prices_array-mean)/std
+    result = list(np.copy(prices_array))
+    prices_array = prices_array[np.newaxis, ..., np.newaxis]
+    for i in range(7):
+        interpreter.set_tensor(
+            input_details[0]['index'], prices_array)
+        interpreter.invoke()
+        prices_array = interpreter.get_tensor(output_details[0]['index'])
+        result.append(prices_array[0, -1, 0])
+    return [i*std+mean for i in result]
