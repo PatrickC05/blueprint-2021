@@ -7,7 +7,7 @@ with open(static("symbol_list.txt")) as f:
     pass
 
 def index(request):
-    return HttpResponse("Hello")
+    return render(request, "home.html")
 
 def get_prices(request, ticker):
     print(stocks[:10])
