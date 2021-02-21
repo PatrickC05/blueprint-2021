@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(result['prices'])
       var xvals = [];
 
-      for (var i = 1; i <= 37; i++) {
+      for (var i = -29; i <= 7; i++) {
         xvals.push(i);
       }
       var trace1 = {
