@@ -1,8 +1,9 @@
+from os import getpgid
 import yfinance
 import datetime
-import pandas as pd
 from tensorflow import lite
 import numpy as np
+import time
 interpreter = lite.Interpreter(model_path="model.tflite")
 
 interpreter.allocate_tensors()
@@ -11,19 +12,25 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
+
 def getPrices(ticker):
     date = datetime.datetime.today()
-    print(date)
-    l = yfinance.download(ticker,date-datetime.timedelta(days=50),date,progress=False)
+    s = yfinance.download(
+        ticker, date-datetime.timedelta(days=1510), date, progress=False)
+    long_arr = np.array(list(s['Close']))
+    mean = np.mean(long_arr)
+    std = np.std(long_arr)
+    l = yfinance.download(
+        ticker, date-datetime.timedelta(days=50), date, progress=False)
     prices = list(l['Close'])[-30:]
-    input_shape = input_details[0]['shape']
     prices_array = np.array(prices)
-    prices_array = prices_array[np.newaxis,...,np.newaxis]
-    print(prices_array.shape)
+    prices_array = (prices_array-mean)/std
+    prices_array = prices_array[np.newaxis, ..., np.newaxis]
+    prices_array = prices_array.astype('float32')
     interpreter.set_tensor(
         input_details[0]['index'], prices_array)
 
     interpreter.invoke()
 
     output_days = interpreter.get_tensor(output_details[0]['index'])
-    return output_days
+    return output_days*std+mean
