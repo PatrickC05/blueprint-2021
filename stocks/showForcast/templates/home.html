@@ -45,8 +45,8 @@
 
         <div class="searchBox">
 
-                <input class="searchInput" id="searchBox" type="text" name="" placeholder="Search...">
-                <button class="searchButton" onclick="search()">
+                <input class="searchInput" id="searchBox" type="text" name="" placeholder="Search..." STYLE="text-transform:uppercase">
+                <button class="searchButton" id= "searchButton" onclick="search()">
                     <i class="icon">
                         <img src="{% static 'img/searchicon.svg' %}" alt="searchicon"/>
                     </i>
@@ -57,7 +57,7 @@
             <div class="col-3">
                 <!-- <a href="whole-foods.html"> -->
                     <!-- <img src="whole-foods-logo.png"> -->
-                    <a href="stock/aapl"><h2>AAPL
+                    <a href="stock/AAPL"><h2>AAPL
                         <p class="fontscoretxt">
                             <b>133.30</b></p>
                     </h2></a>
@@ -67,7 +67,7 @@
             <div class="col-3">
                 <!-- <a href="whole-foods.html"> -->
                     <!-- <img src="whole-foods-logo.png"> -->
-                    <a href="stock/tsla"><h2>TSLA
+                    <a href="stock/TSLA"><h2>TSLA
                         <p class="fontscoretxt">
                             <b>761.83</b></p>
                     </h2></a>
@@ -77,7 +77,7 @@
             <div class="col-3">
                 <!-- <a href="whole-foods.html"> -->
                     <!-- <img src="whole-foods-logo.png"> -->
-                    <a href="stock/amzn"><h2>AMZN
+                    <a href="stock/AMZN"><h2>AMZN
                         <p class="fontscoretxt">
                             <b>3403.18</b></p>
                     </h2></a>
@@ -197,6 +197,14 @@
                     MenuItems.style.maxHeight = "0px";
                 }
             }
+
+            var input = document.getElementById("searchBox");
+            input.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("searchButton").click();
+                }
+            });
         </script>
 
 {% endblock %}
