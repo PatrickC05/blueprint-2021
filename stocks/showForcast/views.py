@@ -8,7 +8,7 @@ def index(request):
 def get_prices(request, ticker):
     if ticker:
         l = [i/100 for i in range(37)]
-        return JsonResponse({"prices":l})
+        return JsonResponse({"prices":util.getPrices(ticker)})
     return JsonResponse({"error": "stock does not exist"},status=404)
 
 def showStock(request, ticker):

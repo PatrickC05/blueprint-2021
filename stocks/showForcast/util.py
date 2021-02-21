@@ -1,4 +1,4 @@
-from os import getpgid
+
 import yfinance
 import datetime
 from tensorflow import lite

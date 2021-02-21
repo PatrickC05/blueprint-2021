@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-fetch(`/prices/{ticker}`)
+fetch("/prices/"+ticker)
 .then((response) => response.json())
 .then((result) => {
   console.log(result)
