@@ -8,8 +8,8 @@ def index(request):
 def get_prices(request, ticker):
     if ticker:
         l = [i/100 for i in range(30)]
-        return JsonResponse({"prices":util.getPrices(ticker)})
+        return JsonResponse({"prices":l})
     return JsonResponse({"error": "stock does not exist"},status=404)
 
-def showStock(request):
-    return render(request, "view.html")
+def showStock(request, ticker):
+    return render(request, "view.html", {'ticker': ticker})

@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
 
 
@@ -10,7 +12,7 @@
             <div class="container">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="{% url 'index' %}">
                             <img src="{% static 'img/AMSPupscale.png' %}" width="70px" class="nav-icon">
                         </a>
                     </div>
@@ -22,11 +24,11 @@
                         </ul>
                         <img src="{% static 'img/menu.png' %}" class="menu-icon" onclick="menutoggle()" align="right">
                     </nav>
-    
+
                 </div>
             </div>
         </div>
-    
+
         <div class="row">
             <div class="col-2">
                 <h1>Bringing you the hottest stocks</h1>
@@ -36,9 +38,9 @@
                 </p>
             </div>
         </div>
-        
+
         <div class="searchBox">
-    
+
                 <input class="searchInput"type="text" name="" placeholder="Search...">
                 <button class="searchButton" href="#">
                     <i class="icon">
@@ -46,7 +48,7 @@
                     </i>
                 </button>
             </div>
-    
+
         <div class="row1">
             <div class="col-3">
                 <!-- <a href="whole-foods.html"> -->
@@ -80,8 +82,8 @@
             </div>
         </div>
         <a href="database.html" class="btn1">Full database &#8594;</a>
-    
-    
+
+
         <!-- rubric and text template -->
         <div class="cont">
             <div class="col-3-info">
@@ -102,28 +104,28 @@
                 <p class="fontheadtxtpage">Educational</p>
                 <p class="p1">
                     Our mission is to make it so the stock market is accessible for everyone.
-                    <!-- All of our rating are based solely on facts provided by 
-                            credited sources. Regardless of how businesses market themselves, 
+                    <!-- All of our rating are based solely on facts provided by
+                            credited sources. Regardless of how businesses market themselves,
                             we provide an honest rating of their systems in place to reduce food waste. -->
                     <br>
                     <a href= "database.html" class="btn2">Learn more &#8594;</a>
                 </p>
             </div>
         </div>
-    
-    
+
+
         <!-- to top button -->
-    
+
         <button onclick="topFunction()" id="myBtn" title="Go to top">
             <img src="{% static 'img/arrow.png' %}">
         </button>
-    
+
         <script>
             //Get the button
             var mybutton = document.getElementById("myBtn");
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function () { scrollFunction() };
-    
+
             function scrollFunction() {
                 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                     mybutton.style.display = "block";
@@ -131,20 +133,20 @@
                     mybutton.style.display = "none";
                 }
             }
-    
+
             // When the user clicks on the button, scroll to the top of the document
             function topFunction() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
             }
         </script>
-    
+
         <!-- footer -->
-    
+
         <hr class="footline">
         <div class="foot">
             <div class="footitems">
-                <a href="index.html">
+                <a href="{% url 'index' %}">
                     <img src="{% static 'img/AMSPupscale.png' %}" width="70px">
                 </a>
             </div>
@@ -171,14 +173,14 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- toggle menu -->
-    
+
         <script>
             var MenuItems = document.getElementById("MenuItems");
-    
+
             MenuItems.style.maxHeight = "0px";
-    
+
             function menutoggle() {
                 if (MenuItems.style.maxHeight == "0px") {
                     MenuItems.style.maxHeight = "200px";
