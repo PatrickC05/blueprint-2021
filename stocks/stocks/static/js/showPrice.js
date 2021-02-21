@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('#current_price').textContent = prices[29].toFixed(2);
       document.querySelector('#predicted_price').textContent = prices[36].toFixed(2);
       var xvals = [];
-      for (var i = 1; i <= 37; i++) {
+
+      for (var i = -29; i <= 7; i++) {
         xvals.push(i);
       }
       var trace1 = {
