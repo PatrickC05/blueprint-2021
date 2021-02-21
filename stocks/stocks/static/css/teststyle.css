@@ -21,12 +21,12 @@
 }
 
 .searchButton {
-    color: rgb(121, 163, 182);
+    color: #2670ff;
     float: right;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #749fb8;
+    background: #2670ff;
     display: flex;
     justify-content: center;
     align-items: center;
