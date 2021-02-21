@@ -1,4 +1,6 @@
 # Blueprint-2021
+February 21, 2021
+Patrick Chen, Arnav Bhakta, Michael Huang, Sol Kim
 
 ## AMSP STOCKS
 - Easy and simple stock viewer
