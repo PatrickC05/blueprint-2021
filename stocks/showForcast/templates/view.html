@@ -5,7 +5,7 @@
 
 {% block otherimports %}
 <script>const ticker = "{{ticker}}"</script>
-<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 <script src="{% static 'js/showPrice.js' %}"></script>
 {% endblock %}
 
@@ -47,8 +47,7 @@
     </div>
 </div>
 
-<div class='graph' id="graph">
-</div>
+<canvas id="myChart"></canvas>
 
 <!-- rubric and text template -->
 
@@ -63,7 +62,7 @@
         <p class="fontptxt">Our machine learning model predicts that this will be the following stock price in a time of
             7 days.
             <br>
-            <i>Note</i> We are not professionals and this price should not be taken as a certain.
+            <i>Note.</i> We are not professionals and this price should not be taken as a certain.
         </p>
     </div>
 </div>

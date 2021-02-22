@@ -11,30 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
       for (var i = -29; i <= 7; i++) {
         xvals.push(i);
       }
-      var trace1 = {
-        x: xvals,
-        y: result['prices'],
-        mode: 'line',
-        type: 'scatter'
-      };
-
-      var data = [trace1];
-
-      var layout = {
-        title: 'Past and Predicted Price',
-
-        xaxis: {
-          title: 'Trading Day',
-        },
-        yaxis: {
-          title: 'Price',
-        },
-
-        xaxis: {
-          range: [-29, 7]
-        },
-      };
-
-      Plotly.newPlot('graph', data, layout);
-    });
+      var ctx = document.getElementById('myChart');
+      data = []
+      for (let i = 0; i < 37; i++) {
+        data.push({x:xvals[i],y:prices[i].toFixed(2)});
+      }
+      console.log(data)
+      var x = new Chart(ctx, {
+         type: 'scatter',
+         data: {
+            datasets: [{
+               pointBackgroundColor: "#2670FF",
+               label: "Stocks over Time",
+               data: data,
+            }]
+         },
+         options: {
+            responsive: true
+         }
+      });
+});
 });
