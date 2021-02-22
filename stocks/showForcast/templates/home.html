@@ -45,7 +45,7 @@
 
         <div class="searchBox">
 
-                <input class="searchInput" id="searchBox" type="text" name="" placeholder="Search..." STYLE="text-transform:uppercase">
+                <input class="searchInput" id="searchBox" type="text" name="" placeholder="Search..." oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);">
                 <button class="searchButton" id= "searchButton" onclick="search()">
                     <i class="icon">
                         <img src="{% static 'img/searchicon.svg' %}" alt="searchicon"/>
