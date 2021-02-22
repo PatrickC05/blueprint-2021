@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var trace1 = {
         x: xvals,
         y: result['prices'],
-        mode: 'markers',
+        mode: 'line',
         type: 'scatter'
       };
 
